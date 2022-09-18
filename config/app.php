@@ -212,7 +212,7 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
-        'hunter' => App\Facades\invoiceFacade::class,
+        'hunter' => App\Facades\InvoiceFacade::class,
     ])->toArray(),
 
 ];

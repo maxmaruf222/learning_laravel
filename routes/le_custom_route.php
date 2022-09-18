@@ -32,3 +32,33 @@ use Illuminate\Support\Facades\Route;
        echo hunter::companyName();
     });
 
+    Route::get('/getCustomRoute05', function () {
+        //my custom facade calling
+       echo hunter::current_date();
+    });
+
+
+    // Route::get('/home', function(){
+    //     return view('home');
+    // });
+
+    // if you only loade page you can use this method it's fast 
+    route::view('home','home');
+
+    // it's resive get or post method
+    route::match(['get','post'],'/route1', function(){
+        return 'this route paramiter result';
+    });
+
+    // must uses route method
+    // route::post();
+    // route::put();
+    // route::match();
+    // route::patch();
+    // route::any();
+    // route::delete();
+    // route::options();
+
+    
+
+
