@@ -59,6 +59,15 @@ use Illuminate\Support\Facades\Route;
     // route::delete();
     // route::options();
 
+    // route parameter pass
+    route::get('/routeN/{Name0}', function($Name0){
+        return 'data passed:'.$Name0;
+    });
     
-
+    // route name
+    //name('this name call from url()');
+    // like {{ route('routeName0') }}
+    route::get(md5('str'), function(){
+        return 'route name working successfully';
+    })->name('routeName0');
 

@@ -8,5 +8,6 @@
 <body>
 	<h1>this is home page</h1>
 	<ul><li><a href="{{url('route1')}}">click</a></li></ul>
+	<ul><li><a href="{{ route('routeName0'); }}">check route name</a></li></ul>
 </body>
 </html>
