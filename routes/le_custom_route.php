@@ -71,8 +71,15 @@ use Illuminate\Support\Facades\Route;
         return 'route name working successfully';
     })->name('routeName0');
 
+    // how to declare middleware in the route?
     route::get('/country', function ()
     {
         return 'This name is avaiable in the middleware';
     })->middleware('c_list');//kernel.php resitared name 
+
+    // how to get csrf token?
+    route::get('/csrf_token', function(){
+        $token = csrf_token();
+        dd($token);
+    });
 
