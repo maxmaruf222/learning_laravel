@@ -71,3 +71,8 @@ use Illuminate\Support\Facades\Route;
         return 'route name working successfully';
     })->name('routeName0');
 
+    route::get('/country', function ()
+    {
+        return 'This name is avaiable in the middleware';
+    })->middleware('c_list');//kernel.php resitared name 
+
