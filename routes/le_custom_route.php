@@ -1,6 +1,8 @@
 <?php
 
+namespace App\Http\Controllers\exmple; //it's have to include for work with controller
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -81,5 +83,17 @@ use Illuminate\Support\Facades\Route;
     route::get('/csrf_token', function(){
         $token = csrf_token();
         dd($token);
+    });
+
+    // how to work controller
+    // route::get('/plist', [product::class, 'product_list']);
+    // route::get('/padd', [product::class, 'product_add']);
+    // route::get('/pdrop', [product::class, 'product_drop']);
+
+    // how to work group of controller
+    route::controller(product::class)->group(function(){
+        route::get('/plist','product_list');
+        route::get('/padd','product_add');
+        route::get('/pdrop','product_drop');
     });
 
