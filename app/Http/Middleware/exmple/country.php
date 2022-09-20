@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Middleware;
+namespace App\Http\Middleware\exmple;
 
 use Closure;
 use Illuminate\Http\Request;
 
-class middle_file_name
+class country
 {
     /**
      * Handle an incoming request.
@@ -15,7 +15,8 @@ class middle_file_name
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
     public function handle(Request $request, Closure $next)
-    {   //you have to register this middleware name in kernel.php
+    {
+        //you have to register this middleware name in kernel.php
         //country list
         $country_list =[
             'bangladesh',
@@ -30,6 +31,5 @@ class middle_file_name
             // return base path
             return redirect()->to('/');
         }
-        
     }
 }

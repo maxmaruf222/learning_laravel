@@ -85,6 +85,8 @@ use Illuminate\Support\Facades\Route;
         dd($token);
     });
 
+
+
     // how to work controller
     // route::get('/plist', [product::class, 'product_list']);
     // route::get('/padd', [product::class, 'product_add']);
@@ -96,4 +98,9 @@ use Illuminate\Support\Facades\Route;
         route::get('/padd','product_add');
         route::get('/pdrop','product_drop');
     });
+
+
+    // how to call invokeable controller and with check middleware  
+    //if you wanna see the result try this link http://127.0.0.1:8000/invoke?list=india
+    route::get('/invoke', invokableController::class)->middleware('c_list');
 
