@@ -87,6 +87,7 @@ use Illuminate\Support\Facades\Route;
 
 
 
+
     // how to work controller
     // route::get('/plist', [product::class, 'product_list']);
     // route::get('/padd', [product::class, 'product_add']);
