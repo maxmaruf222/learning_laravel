@@ -20,4 +20,7 @@ Route::get('/newHome', function(){
 
     route::post('/checkCsrf',[allChecking::class, 'formChecking'])->name('formSubmit');
 
+    // how to use view?
+    route::get('/viw', [allChecking::class, 'viwMethod']);
+
 

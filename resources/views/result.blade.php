@@ -8,7 +8,10 @@
 </head>
 <body>
 
- <h1>{{$number['a']}}</h1>
+ <h1>{{$number['a']}}</h1> 
+
+ <!-- using view -->
+ <h1> Developer name: {{ $name }}</h1>
     
 </body>
 </html>
