@@ -14,7 +14,7 @@ class allChecking extends Controller
 
     // how to use view?
     public function viwMethod()
-    {   $arr = ['name'=>'Maruf'];
+    {   $arr = ['Cname'=>'Component'];
         return view('result', $arr );
     }
 }

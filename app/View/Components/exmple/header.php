@@ -11,9 +11,12 @@ class header extends Component
      *
      * @return void
      */
-    public function __construct()
+    public $name;
+    public function __construct($name)
     {
         //
+        // $this->name should be matched with component attribute name like name="$Cname"
+        $this->name = $name;
     }
 
     /**

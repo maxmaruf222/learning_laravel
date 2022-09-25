@@ -8,11 +8,12 @@
 </head>
 <body>
     {{-- how to use componnet? --}}
-    < x-exmple.Header />
- <h1>{{$number['a']}}</h1> 
+    {{-- must be needed : --}}
+    < x-exmple.Header :name="$Cname" />
+    <h1>{{$number['a']}}</h1> 
 
  <!-- using view -->
- <h1> Developer name: {{ $name }}</h1>
+ {{-- <h1> Developer name: {{ $name }}</h1> --}}
     
 </body>
 </html>
