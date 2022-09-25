@@ -7,7 +7,8 @@
     <title>result.blade.php</title>
 </head>
 <body>
-
+    {{-- how to use componnet? --}}
+    < x-exmple.Header />
  <h1>{{$number['a']}}</h1> 
 
  <!-- using view -->
