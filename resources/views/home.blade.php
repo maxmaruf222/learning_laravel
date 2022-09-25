@@ -11,6 +11,8 @@
 	<ul><li><a href="{{ route('routeName0'); }}">check route name</a></li></ul>
 
 	<br>
+
+
 	<form action="{{ route('formSubmit') }}" method="POST">
 		<!-- define csrf protection -->
 		@csrf
@@ -18,5 +20,8 @@
 		<input type="email" name="email" placeholder="Enter your email"><br>
 		<input type="submit" name="submit">
 	</form>
+	@if (session('status'))
+		<p>{{session('status')}}</p>
+	@endif
 </body>
 </html>

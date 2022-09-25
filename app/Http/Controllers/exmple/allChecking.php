@@ -9,7 +9,7 @@ class allChecking extends Controller
 {
     //
     public function formChecking(Request $request){
-        dd( $request->all());
+        return redirect()->back()->with('status', 'passed');
     }
 
     // how to use view?
