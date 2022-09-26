@@ -13,7 +13,3 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('hunter', function(){
-    return hunter::current_date();
-});
-

@@ -15,9 +15,7 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         //
-        App::bind('exmple_bind_Name', function(){
-            return new \App\Test\TestFacades;
-        });
+        
     }
 
     /**
