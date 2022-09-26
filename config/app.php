@@ -195,6 +195,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         //added to list new service provider
+        App\Providers\exmple\faceServiceProvider::class,
        
 
     ],
@@ -212,6 +213,8 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
+        // hunter scope and class 
+        'hunter' => App\Test\Facades\TestFacades::class,
     ])->toArray(),
 
 ];
