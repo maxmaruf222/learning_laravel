@@ -7,13 +7,8 @@
     <title>result.blade.php</title>
 </head>
 <body>
-    {{-- how to use componnet? --}}
-    {{-- must be needed : --}}
-    < x-exmple.Header :name="$Cname" />
-    <h1>{{$number['a']}}</h1> 
+    <h1>this is result page</h1><hr>
 
- <!-- using view -->
- {{-- <h1> Developer name: {{ $name }}</h1> --}}
-    
+
 </body>
 </html>
