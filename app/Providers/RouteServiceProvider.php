@@ -38,10 +38,7 @@ class RouteServiceProvider extends ServiceProvider
 
             //custome route added to route service provider list by me
             Route::middleware('web')
-                ->group(base_path('routes/le_custom_route.php'));
-
-            Route::middleware('web')
-                ->group(base_path('routes/allCheckingR.php'));
+                ->group(base_path('routes/simple.php'));
         });
     }
 

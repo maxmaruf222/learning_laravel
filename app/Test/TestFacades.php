@@ -1,7 +1,7 @@
 <?php
-	namespace App\facades;
-	class Invoice{
-		public function companyName(){
+	namespace App\Facades;
+	class TestFacades{
+		public function company_name(){
 			return 'ABC Pvt Ltd';
 		}
 

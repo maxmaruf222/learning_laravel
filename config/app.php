@@ -194,8 +194,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        //added to list our self provider
-        App\Providers\le_custom_provider::class,
+        //added to list new service provider
+       
 
     ],
 
@@ -212,7 +212,7 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
-        'hunter' => App\Facades\InvoiceFacade::class,
+        'hunter' => App\Test\Facades\TestFacades::class,
     ])->toArray(),
 
 ];

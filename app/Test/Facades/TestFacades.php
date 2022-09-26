@@ -1,9 +1,9 @@
 <?php
-	namespace App\facades;
+	namespace App\Test\Facades;
 	use Illuminate\Support\Facades\Facade;
-	class InvoiceFacade extends Facade{
+	class TestFacades extends Facade{
 		protected static function getFacadeAccessor(){
-			return 'Invoice';
+			return 'exmple_bind_Name';
 		}
 	}
 

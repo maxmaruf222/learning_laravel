@@ -1,9 +1,9 @@
 <?php
 
 namespace App\Providers;
-
+use App;
 use Illuminate\Support\ServiceProvider;
-use App\Facades\Invoice;
+
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -15,8 +15,8 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         //
-        app()->bind('Invoice', function($app){
-            return new Invoice();
+        App::bind('exmple_bind_Name', function(){
+            return new \App\Test\TestFacades;
         });
     }
 
