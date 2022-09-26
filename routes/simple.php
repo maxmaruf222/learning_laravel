@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\URL;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,7 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 route::get('/viw', function(){
-    // calling facade 
-    return hunter::current_date();
+    // echo url()->current();
+    // echo url()->full();
+    // echo url()->previous();
+
+   echo URL::current();
+//    echo URL::full();
+//    echo URL::previous();
+
 });
 
