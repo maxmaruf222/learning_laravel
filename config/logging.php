@@ -117,16 +117,6 @@ return [
         'emergency' => [
             'path' => storage_path('logs/laravel.log'),
         ],
-        'contractStore' => [
-            'driver' => 'single',
-            'path' => storage_path('logs/contract.log'),
-            'level' => 'info',
-        ],
-        'newOne' => [
-            'driver' => 'single',
-            'path' => storage_path('logs/new.log'),
-            'level' => env('LOG_LEVEL', 'debug'),
-        ],
     ],
 
 ];

@@ -16,42 +16,10 @@
 <body>
   <header>
 	<!-- place navbar here -->
-	<h2>Header</h2>
+	<h2>Home page</h2>
   </header>
   <main>
-	<div class="container">
-		<form action="{{ route('form_01') }}" method="POST">
-			@csrf
-			<div class="row mb-3">
-			  <label for="name" class="col-sm-2 col-form-label">Name</label>
-			  <div class="col-sm-10">
-				<input type="text" name="name" value="{{ old('name') }}" class="form-control">
-				@error('name')
-					<strong class="text-danger">{{ $message }}</strong>
-				@enderror
-			</div>
-			</div>
-			<div class="row mb-3">
-			  <label for="name" class="col-sm-2 col-form-label">Email</label>
-			  <div class="col-sm-10">
-				<input type="email" name="email" value="{{ old('email') }}" class="form-control">
-				@error('email')
-					<strong class="text-danger">{{ $message }}</strong>
-				@enderror
-			</div>
-			</div>
-			<div class="row mb-3">
-			  <label for="password" class="col-sm-2 col-form-label">Password</label>
-			  <div class="col-sm-10">
-				<input type="password" name="password" value="{{ old('password') }}" class="form-control">
-				@error('password')
-				  <strong class="text-danger">{{ $message }}</strong>
-			  	@enderror
-			</div>
-		</div>
-			<button type="submit" class="btn btn-primary">Sign in</button>
-		  </form>
-	</div>
+	
   </main>
   <footer>
 	<!-- place footer here -->
