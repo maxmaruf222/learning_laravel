@@ -39,3 +39,8 @@ route::get('/cookieClear', function(){
  
 Route::post('user/validation', [allChecking::class, 'check'])->name('form_01');
 
+Route::get('error', function(){
+    //error message
+   return abort(401);
+});
+
