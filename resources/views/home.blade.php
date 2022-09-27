@@ -16,6 +16,7 @@
 <body>
   <header>
 	<!-- place navbar here -->
+	<h2>Header</h2>
   </header>
   <main>
 	<div class="container">
@@ -24,7 +25,7 @@
 			<div class="row mb-3">
 			  <label for="name" class="col-sm-2 col-form-label">Name</label>
 			  <div class="col-sm-10">
-				<input type="text" name="name" class="form-control">
+				<input type="text" name="name" value="{{ old('name') }}" class="form-control">
 				@error('name')
 					<strong class="text-danger">{{ $message }}</strong>
 				@enderror
@@ -33,7 +34,7 @@
 			<div class="row mb-3">
 			  <label for="name" class="col-sm-2 col-form-label">Email</label>
 			  <div class="col-sm-10">
-				<input type="email" name="email" class="form-control">
+				<input type="email" name="email" value="{{ old('email') }}" class="form-control">
 				@error('email')
 					<strong class="text-danger">{{ $message }}</strong>
 				@enderror
@@ -42,7 +43,7 @@
 			<div class="row mb-3">
 			  <label for="password" class="col-sm-2 col-form-label">Password</label>
 			  <div class="col-sm-10">
-				<input type="password" name="password" class="form-control">
+				<input type="password" name="password" value="{{ old('password') }}" class="form-control">
 				@error('password')
 				  <strong class="text-danger">{{ $message }}</strong>
 			  	@enderror
