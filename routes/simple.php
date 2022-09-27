@@ -1,5 +1,5 @@
 <?php
-
+namespace App\Http\Controllers\exmple;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\URL;
 
@@ -36,4 +36,6 @@ route::get('/cookieClear', function(){
     Cookie::queue(Cookie::forget('name'));
     return view('result');
 });
+ 
+Route::post('user/validation', [allChecking::class, 'check'])->name('form_01');
 
