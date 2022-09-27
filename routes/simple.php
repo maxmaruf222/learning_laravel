@@ -13,14 +13,27 @@ use Illuminate\Support\Facades\URL;
 | contains the "web" middleware group. Now create something great!
 |
 */
-route::get('/viw', function(){
-    // echo url()->current();
-    // echo url()->full();
-    // echo url()->previous();
+route::get('/session', function(){
+    // set session 
+    session()->put('name', 'max');
+    
+    return view('result');
+});
 
-   echo URL::current();
-//    echo URL::full();
-//    echo URL::previous();
+route::get('/sessionClear', function(){
+    //it's clear session
+    session()->flush(); 
+    return view('result');
+});
 
+Route::get('/cookie', function () {
+    Cookie::queue(Cookie::make('name', 'max', 10));
+
+    return view('result');
+});
+
+route::get('/cookieClear', function(){
+    Cookie::queue(Cookie::forget('name'));
+    return view('result');
 });
 

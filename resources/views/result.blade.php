@@ -7,8 +7,13 @@
     <title>result.blade.php</title>
 </head>
 <body>
-    <h1>this is result page</h1><hr>
+    <h1>This is result page</h1><hr>
 
+    <p>Cookie</p>
+    <h2>Name: {{ Cookie::get('name', 'default')}}</h2><hr>
+
+    <p>session</p>
+    <h1>Name: {{ session()->get('name', 'default')}}</h1>
 
 </body>
 </html>
