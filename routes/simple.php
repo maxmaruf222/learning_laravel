@@ -2,6 +2,7 @@
 namespace App\Http\Controllers\exmple;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Facades\Log;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,3 +45,20 @@ Route::get('error', function(){
    return abort(401);
 });
 
+Route::get('/setLog',function(){
+    Log::info("This is your age: ". rand(10,15));
+    Log::emergency("message");
+
+    // our logfile 
+    Log::channel('contractStore')->info('registed member id : '.rand(500, 600));
+    Log::channel('newOne')->info('registed member id : '.rand(500, 600));
+    return redirect('/');
+    
+});
+ 
+// get logfile
+Route::get('/getLog', function () {
+    $logfile = file(storage_path().'/logs/laravel.log');
+    dd($logfile);
+    
+}); 

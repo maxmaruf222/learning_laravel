@@ -15,7 +15,7 @@ return [
     | messages to the logs. The name specified in this option should match
     | one of the channels defined in the "channels" configuration array.
     |
-    */
+    */ 
 
     'default' => env('LOG_CHANNEL', 'stack'),
 
@@ -116,6 +116,16 @@ return [
 
         'emergency' => [
             'path' => storage_path('logs/laravel.log'),
+        ],
+        'contractStore' => [
+            'driver' => 'single',
+            'path' => storage_path('logs/contract.log'),
+            'level' => 'info',
+        ],
+        'newOne' => [
+            'driver' => 'single',
+            'path' => storage_path('logs/new.log'),
+            'level' => env('LOG_LEVEL', 'debug'),
         ],
     ],
 
