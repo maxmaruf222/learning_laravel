@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Controller\exmple;
+use App\Http\Controllers\exmple\allChecking;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +22,8 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('home');
 });
+
+Route::get('xyzz/{id}', [allChecking::class, 'details'])->name('user.details');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

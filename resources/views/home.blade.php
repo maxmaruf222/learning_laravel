@@ -19,6 +19,7 @@
 	<h2>Home page</h2>
   </header>
   <main>
+  <a href="{{ route('user.details', Crypt::encryptString('1')) }}" class="btn btn-primary btn-sm">Click to view</a>
 	
   </main>
   <footer>
