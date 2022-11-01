@@ -63,7 +63,5 @@ class Kernel extends HttpKernel
         'signed' => \App\Http\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
-        //the c_list needed roude file like middeware('c_list');
-        'country' => \App\Http\Middleware\exmple\country::class,
     ];
 }
