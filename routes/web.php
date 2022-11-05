@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\adminController;
 use App\Http\Controllers\CustomController;
+use App\Http\Controllers\StudentsController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -40,3 +41,4 @@ Route::delete('form/delete/{id}', [CustomController::class, 'delete'])->name('fo
 Route::post('form/data/edit/{id}', [CustomController::class, 'edit'])->name('form.edit');
 Route::post('form/update/{id}', [CustomController::class, 'update'])->name('form.update');
 
+Route::resource('students', StudentsController::class);
