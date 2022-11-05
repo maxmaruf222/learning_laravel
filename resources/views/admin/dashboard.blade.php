@@ -10,7 +10,7 @@
     <h2 class="bg-primary justify-content-center">ADMIN DASHBOARD</h2>
     <hr>
     <div class="card">
-        <img class="card-img-top" src="" alt="Card image cap">
+        <img class="card-img-top" src="https://image.shutterstock.com/image-vector/user-icon-vector-260nw-393536320.jpg" alt="Card image cap">
         <div class="card-body">
             <h4 class="card-title">Title</h4>
             <p class="card-text">Text</p>
