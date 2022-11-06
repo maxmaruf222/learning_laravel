@@ -22,7 +22,7 @@
               </tr>
             </thead>
             <tbody>
-              @foreach ($students as $row)
+              @foreach ($boys as $row)
               <tr>
                 <th scope="row">{{ $row->id }}</th>
                 <td>{{ $row->name }}</td>
@@ -37,7 +37,7 @@
               
             </tbody>
         </table>
-        {{ $students->links('pagination::bootstrap-5') }}
+        <div>{{ $boys->links() }}</div>
     </div>
 </body>
 </html>
