@@ -13,8 +13,13 @@ class StudentsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('students.index');
+    { 
+        
+        $boys = DB::table('boys')->paginate();
+        return view('students.index', ['students'=> $boys]);
+    
+       
+        
     }
 
     /**
