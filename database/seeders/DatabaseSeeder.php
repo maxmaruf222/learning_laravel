@@ -18,10 +18,10 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         boys::factory()
-        ->count(50)
+        ->count(500)
         ->create();
         girls::factory()
-        ->count(50)
+        ->count(500)
         ->create();;
 
         // \App\Models\User::factory()->create([

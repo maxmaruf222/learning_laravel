@@ -21,9 +21,9 @@ class boysFactory extends Factory
     {
         return [
             'name'=>$this->faker->name(),
-            'roll'=>$this->faker->randomNumber(10 > 90),
+            'roll'=>$this->faker->randomNumber(20 > 30),
             'group'=>$this->faker->sentence(4),
-            'status'=>$this->faker->sentence(5),
+            'status'=>$this->faker->sentence(10),
         ];
     }
 }
