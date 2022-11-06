@@ -1,9 +1,7 @@
 <?php
 
-use App\Http\Controllers\adminController;
 use App\Http\Controllers\boysController;
-use App\Http\Controllers\CustomController;
-use App\Http\Controllers\StudentsController;
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -23,4 +21,7 @@ Route::get('/', function () {return view('welcome');});
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/boys', [boysController::class, 'index']);
+Route::get('/category/index', [CategoryController::class, 'index'])->name('category.index');
+Route::get('/category/create', [CategoryController::class, 'create'])->name('category.create');
+Route::post('/category/store', [CategoryController::class, 'store'])->name('category.store');
 
