@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\adminController;
+use App\Http\Controllers\boysController;
 use App\Http\Controllers\CustomController;
 use App\Http\Controllers\StudentsController;
 use Illuminate\Support\Facades\Route;
@@ -40,5 +41,8 @@ Route::post('form/add/new',[CustomController::class, 'store'])->name('add.store'
 Route::delete('form/delete/{id}', [CustomController::class, 'delete'])->name('form.delete');
 Route::post('form/data/edit/{id}', [CustomController::class, 'edit'])->name('form.edit');
 Route::post('form/update/{id}', [CustomController::class, 'update'])->name('form.update');
+
+
+Route::get('/boys', [boysController::class, 'index']);
 
 Route::resource('students', StudentsController::class);
