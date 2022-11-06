@@ -19,10 +19,10 @@ class girlsFactory extends Factory
     public function definition()
     {
         return [
-            'name'=>Str::random('5'),
-            'roll'=>10,
-            'group'=>'B',
-            'status'=>Str::random('5'),
+            'name'=>$this->faker->name(),
+            'roll'=>$this->faker->randomNumber(10 > 90),
+            'group'=>$this->faker->sentence(4),
+            'status'=>$this->faker->sentence(5),
         ];
     }
 }
