@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+                <div class="card-header">{{ __('Category index') }}</div>
 
                 <div class="card-body">
                     <a class="btn btn-sm btn-primary" href="{{ route('category.create'); }}">Add Category</a>
@@ -26,8 +26,16 @@
                                     <td>{{ $row->category_name }}</td>
                                     <td>{{ $row->category_slug }}</td>
                                     <td>
-                                        <a href="#" class="btn btn-sm btn-info">Edit</a>
-                                        <a href="#" class="btn btn-sm btn-danger">Delete</a>
+                                        <a href="{{ route('category.edit', $row->id) }}" class="btn btn-sm btn-info">Edit</a>
+                                        <div class="btn btn-sm">
+                                            <form  action="{{ route('category.delete', $row->id) }}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <input class=" btn btn-sm btn-danger" type="submit" value="Delete">
+                                            </form>
+                                        </div>
+                                        
+                                        
                                     </td>
                                 </tr>
                             @endforeach
