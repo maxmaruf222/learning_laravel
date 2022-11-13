@@ -9,7 +9,11 @@
 
                 <div class="card-body">
                     <a class="btn btn-sm btn-primary" href="{{ route('category.create'); }}">Add Category</a>
+                    @if (Session::has('success'))
+                        <strong class="alert alert-sm alert-info">{{ Session::get('success') }}</strong>
+                    @endif
                     <br>
+
                     <table class="table table-responsive">
                         <thead>
                             <tr>

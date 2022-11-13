@@ -49,7 +49,8 @@ class CategoryController extends Controller
     }
     public function delete($request)
     {
-        return 'id:'.$request;
+        Category::destroy($request);
+        return redirect()->back()->with('success', 'deleted successfully!!');
     }
 
     public function update(Request $request, $id)

@@ -6,7 +6,7 @@
         <div class="col-md-8">
             @if (Session::has('success'))
                 <strong class="alert alert-info">{{ Session::get('success') }}</strong>
-                @endif
+            @endif
             <div class="card">
                 <div class="card-header">{{ __('Dashboard') }}</div>
                 <div class="card-body">
