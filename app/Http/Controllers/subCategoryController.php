@@ -12,7 +12,7 @@ class subCategoryController extends Controller
     public function index()
     {
        $data = subcategories::all();
-       return view('categories.index', compact('data'));
+       return view('subcategory.index', compact('data'));
     }
 
     public function create()
@@ -36,5 +36,16 @@ class subCategoryController extends Controller
         $notification = array('message'=>'sub category added successfully!!', 'type'=>'success');
         return redirect()->back()->with($notification);
         
+    }
+
+    public function destroy()
+    {
+        return 'passed';
+    }
+
+
+    public function edit()
+    {
+        return 'passed';
     }
 }

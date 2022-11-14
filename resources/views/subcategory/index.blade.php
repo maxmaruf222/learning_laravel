@@ -24,7 +24,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-              <li class="breadcrumb-item active">Sub category table</li>
+              <li class="breadcrumb-item active">Category table</li>
             </ol>
           </div>
         </div>
@@ -38,7 +38,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                          <h3 class="card-title">All Sub Category</h3>
+                          <h3 class="card-title">All Category</h3>
                         </div>
                         <a class="btn btn-sm btn-primary" href="{{ route('category.create'); }}">Add Category</a>
                         @if (Session::has('success'))
@@ -61,12 +61,13 @@
                                 @foreach ($data as $key =>$row)
                                     <tr>
                                         <td>{{ ++$key }}</td>
+                                        <td>{{ $row->Category->category_name }}</td>
                                         <td>{{ $row->category_name }}</td>
                                         <td>{{ $row->category_slug }}</td>
                                         <td>
-                                            <a href="{{ route('category.edit', $row->id) }}" class="btn btn-sm btn-info">Edit</a>
+                                            <a href="{{ route('subCategory.edit', $row->id) }}" class="btn btn-sm btn-info">Edit</a>
                                             <div class="btn btn-sm">
-                                                <form  action="{{ route('category.delete', $row->id) }}" method="POST">
+                                                <form  action="{{ route('subCategory.delete', $row->id) }}" method="POST">
                                                     @csrf
                                                     @method('DELETE')
                                                     <input class=" btn btn-sm btn-danger" type="submit" value="Delete">

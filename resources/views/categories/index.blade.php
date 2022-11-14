@@ -1,15 +1,15 @@
+
+
+
+
+
+
+
 @extends('layouts.app')
 
 @section('content')
 
 //this code will be run in stack
-@push('script_name')
-<script>
-    $document().ready(function(){
-        console.log('Hello World');
-    });
-   </script>
-@endpush
 
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -19,12 +19,11 @@
         <div class="row mb-2">
           <div class="col-sm-6">
             <h1>DataTables</h1>
-            @stack('script_name')//code will be run hare
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-              <li class="breadcrumb-item active">Category table</li>
+              <li class="breadcrumb-item active">Sub category table</li>
             </ol>
           </div>
         </div>
@@ -38,7 +37,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                          <h3 class="card-title">All Category</h3>
+                          <h3 class="card-title">All Sub Category</h3>
                         </div>
                         <a class="btn btn-sm btn-primary" href="{{ route('category.create'); }}">Add Category</a>
                         @if (Session::has('success'))
@@ -52,7 +51,6 @@
                                 <tr>
                                     <th>Serial</th>
                                     <th>Category</th>
-                                    <th>SubCategory</th>
                                     <th>Slug</th>
                                     <th>Action</th>
                                 </tr>
@@ -61,7 +59,6 @@
                                 @foreach ($data as $key =>$row)
                                     <tr>
                                         <td>{{ ++$key }}</td>
-                                        <td>{{ $row->Category->category_name }}</td>
                                         <td>{{ $row->category_name }}</td>
                                         <td>{{ $row->category_slug }}</td>
                                         <td>
@@ -85,6 +82,26 @@
             </div>
         </div>
 @endsection
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 {{-- <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">

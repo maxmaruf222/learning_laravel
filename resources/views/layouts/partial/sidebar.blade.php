@@ -41,25 +41,13 @@
               <li class="nav-item">
                 <a href="{{ route('category.index') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Category index</p>
+                  <p>All Category</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{ route('category.create') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Category create</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{ route('category.update', Auth::user()->id) }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Category update</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{ route('category.delete', Auth::user()->id) }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Category delete</p>
+                  <p>Create New Category</p>
                 </a>
               </li>
             </ul>
@@ -68,7 +56,7 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
-               SubCategory
+               SUBCATEGORY
                 <i class="fas fa-angle-left right"></i>
                 <span class="badge badge-info right">3</span>
               </p>
@@ -76,14 +64,12 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="{{ route('subCategory.index') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Category index</p>
+                  <p>All SubCategory</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{ route('subCategory.create') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Category create</p>
+                  <p>Create New SubCetegory</p>
                 </a>
               </li>
             </ul>

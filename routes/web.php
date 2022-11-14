@@ -33,3 +33,5 @@ Route::post('/category/update/{id}', [CategoryController::class, 'update'])->nam
 Route::get('/subcategory/index', [subCategoryController::class, 'index'])->name('subCategory.index');
 Route::get('/subcategory/create', [subCategoryController::class, 'create'])->name('subCategory.create');
 Route::post('/subcategory/store', [subCategoryController::class, 'store'])->name('subCategory.store');
+Route::post('/subcategory/destroy', [subCategoryController::class, 'destroy'])->name('subCategory.delete');
+Route::post('/subcategory/edit', [subCategoryController::class, 'edit'])->name('subCategory.edit');
