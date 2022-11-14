@@ -51,7 +51,8 @@
                             <thead>
                                 <tr>
                                     <th>Serial</th>
-                                    <th>Name</th>
+                                    <th>Category</th>
+                                    <th>SubCategory</th>
                                     <th>Slug</th>
                                     <th>Action</th>
                                 </tr>
@@ -60,6 +61,7 @@
                                 @foreach ($data as $key =>$row)
                                     <tr>
                                         <td>{{ ++$key }}</td>
+                                        <td>{{ $row->Category->category_name }}</td>
                                         <td>{{ $row->category_name }}</td>
                                         <td>{{ $row->category_slug }}</td>
                                         <td>

@@ -11,7 +11,8 @@ class subCategoryController extends Controller
 {
     public function index()
     {
-return 'index';
+       $data = subcategories::all();
+       return view('categories.index', compact('data'));
     }
 
     public function create()
