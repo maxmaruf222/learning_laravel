@@ -1,6 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
+
+//this code will be run in stack
+@push('script_name')
+<script>
+    $document().ready(function(){
+        console.log('Hello World');
+    });
+   </script>
+@endpush
+
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -9,6 +19,7 @@
         <div class="row mb-2">
           <div class="col-sm-6">
             <h1>DataTables</h1>
+            @stack('script_name')//code will be run hare
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
