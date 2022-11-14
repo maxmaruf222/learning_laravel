@@ -34,8 +34,8 @@ class CategoryController extends Controller
             'category_name'=>$request->category_name,
             'category_slug'=>Str::of($request->category_name)->slug('-'),
         ]);
-        
-        return redirect()->back()->with('success', 'Added new category Successfully!!');
+        $notification =array('message'=>'Added new category successfully', 'type'=>'success');
+        return redirect()->back()->with($notification);
     }
 
     public function edit($id)
