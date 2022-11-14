@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\boysController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\subCategoryController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -28,3 +29,7 @@ Route::get('/category/edit/{id}', [CategoryController::class, 'edit'])->name('ca
 Route::delete('/category/delete/{id}', [CategoryController::class, 'delete'])->name('category.delete');
 Route::post('/category/update/{id}', [CategoryController::class, 'update'])->name('category.update');
 
+// sub category 
+Route::get('/subcategory/index', [subCategoryController::class, 'index'])->name('subCategory.index');
+Route::get('/subcategory/create', [subCategoryController::class, 'create'])->name('subCategory.create');
+Route::post('/subcategory/store', [subCategoryController::class, 'store'])->name('subCategory.store');
