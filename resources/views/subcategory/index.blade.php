@@ -2,15 +2,6 @@
 
 @section('content')
 
-//this code will be run in stack
-@push('script_name')
-<script>
-    $document().ready(function(){
-        console.log('Hello World');
-    });
-   </script>
-@endpush
-
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -19,7 +10,6 @@
         <div class="row mb-2">
           <div class="col-sm-6">
             <h1>DataTables</h1>
-            @stack('script_name')//code will be run hare
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -40,7 +30,7 @@
                         <div class="card-header">
                           <h3 class="card-title">All Category</h3>
                         </div>
-                        <a class="btn btn-sm btn-primary" href="{{ route('category.create'); }}">Add Category</a>
+                        <a class="btn btn-sm btn-primary" href="{{ route('subCategory.create'); }}">Add SubCategory</a>
                         @if (Session::has('success'))
                             <strong class="alert alert-sm alert-info">{{ Session::get('success') }}</strong>
                         @endif
@@ -84,4 +74,42 @@
                 </div>
             </div>
         </div>
+
+        <script>
+          @if(Session::has('message'))
+          toastr.options =
+          {
+              "closeButton" : true,
+              "progressBar" : true
+          }
+                  toastr.success("{{ session('message') }}");
+          @endif
+      
+          @if(Session::has('error'))
+          toastr.options =
+          {
+              "closeButton" : true,
+              "progressBar" : true
+          }
+                  toastr.error("{{ session('error') }}");
+          @endif
+      
+          @if(Session::has('info'))
+          toastr.options =
+          {
+              "closeButton" : true,
+              "progressBar" : true
+          }
+                  toastr.info("{{ session('info') }}");
+          @endif
+      
+          @if(Session::has('warning'))
+          toastr.options =
+          {
+              "closeButton" : true,
+              "progressBar" : true
+          }
+                  toastr.warning("{{ session('warning') }}");
+          @endif
+        </script> 
 @endsection

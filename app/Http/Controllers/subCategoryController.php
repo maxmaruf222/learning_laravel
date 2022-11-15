@@ -38,14 +38,31 @@ class subCategoryController extends Controller
         
     }
 
-    public function destroy()
+    public function destroy($id)
     {
-        return 'passed';
+        subcategories::destroy($id);
+        $notification = array('message'=>'Deleted successfully!!', 'type'=>'warning');
+        return redirect()->back()->with($notification);
     }
 
 
-    public function edit()
-    {
-        return 'passed';
+    public function edit($id)
+    {   
+        $data = subcategories::find($id);
+        return view('subcategory.edit', compact('data') );
+    }
+
+    public function update(Request $request, $id)
+    {   
+        $request->validate([
+            'category_name'=> 'required|unique:subcategories|max:250'
+        ]);
+        subcategories::find($id)->update([
+            'category_name'=>$request->category_name,
+        ]);
+
+        $notification = array('message'=>'update subCategory successfully!!', 'type'=>'success');
+        return redirect()->back()->with($notification);
+        
     }
 }
