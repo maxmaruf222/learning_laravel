@@ -3,6 +3,7 @@
 use App\Http\Controllers\boysController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\subCategoryController;
+use App\Http\Controllers\RelationController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -36,3 +37,7 @@ Route::post('/subcategory/store', [subCategoryController::class, 'store'])->name
 Route::delete('/subcategory/destroy/{id}', [subCategoryController::class, 'destroy'])->name('subCategory.delete');
 Route::get('/subcategory/edit\{id}', [subCategoryController::class, 'edit'])->name('subCategory.edit');
 Route::post('/subcategory/update/{id}', [subCategoryController::class, 'update'])->name('subCategory.update');
+
+// reletionship
+Route::get('belongsTo', [RelationController::class, 'belongsTo']);
+Route::get('hasOne', [RelationController::class, 'hasOne']);

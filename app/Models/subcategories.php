@@ -16,6 +16,6 @@ class subcategories extends Model
     
     public function Category()
     {
-        return $this->belongsTo(Category::class, 'category_id');
+        return $this->belongsTo(Category::class, 'category_id');//this is category_id is foreign key
     }
 }
