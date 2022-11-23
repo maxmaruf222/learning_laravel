@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\boysController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\subCategoryController;
 use App\Http\Controllers\RelationController;
 use Illuminate\Support\Facades\Route;
@@ -41,3 +42,9 @@ Route::post('/subcategory/update/{id}', [subCategoryController::class, 'update']
 // reletionship
 Route::get('belongsTo', [RelationController::class, 'belongsTo']);
 Route::get('hasOne', [RelationController::class, 'hasOne']);
+
+
+//__posts route__//
+Route::get('Post/Create', [PostController::class, 'create'])->name('post.create');
+Route::get('Post/Manage', [PostController::class, 'manage'])->name('post.manage');
+Route::post('Post/Store', [PostController::class, 'store'])->name('post.store');

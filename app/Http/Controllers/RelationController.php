@@ -11,13 +11,13 @@ class RelationController extends Controller
 {
     public function hasOne()
     {
-        $data =  Category::find(46);
+        $data =  Category::find(1);
         return view('relation.has_one', compact('data'));
     }
 
     public function belongsTo()
     {
-        $data = subcategories::find(7);
+        $data = subcategories::find(1);
 
         return view('relation.belongs_to', compact('data'));
     }

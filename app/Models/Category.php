@@ -13,7 +13,7 @@ class Category extends Model
         'category_name', 'category_slug'
     ];
 
-    public function subCategory(){
+    public function sub_category(){
         return $this->hasOne(subcategories::class, 'category_id');
     }
 }
