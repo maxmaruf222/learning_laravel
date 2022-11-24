@@ -41,6 +41,7 @@
                                     <th>SubCategory</th>
                                     <th>Author</th>
                                     <th>Title</th>
+                                    <th>Date</th>
                                     <th>published</th>
                                     <th>Action</th>
                                 </tr>
@@ -53,15 +54,16 @@
                                         <td>{{ $post->subcategory->category_name }}</td>
                                         <td>{{ $post->user->name }}</td>
                                         <td>{{ $post->title }}</td>
+                                        <td>{{date('d F Y' , strtotime($post->post_date)) }}</td>
                                         @if ($post->status == 1)
                                              <td>Active</td> 
                                         @else
                                              <td>Inactive</td>
                                         @endif
                                         <td>
-                                            <a href="#" class="btn btn-sm btn-info">Edit</a>
+                                            <a href="" class="btn btn-sm btn-info">Edit</a>
                                             <div class="btn btn-sm">
-                                                <form  action="#" method="POST">
+                                                <form  action="{{ route('post.destroy', $post->id) }}" method="POST">
                                                     @csrf
                                                     @method('DELETE')
                                                     <input class=" btn btn-sm btn-danger" type="submit" value="Delete">

@@ -48,3 +48,4 @@ Route::get('hasOne', [RelationController::class, 'hasOne']);
 Route::get('Post/Create', [PostController::class, 'create'])->name('post.create');
 Route::get('Post/Manage', [PostController::class, 'index'])->name('post.manage');
 Route::post('Post/Store', [PostController::class, 'store'])->name('post.store');
+Route::delete('/Post/destroy/{id}', [PostController::class, 'destroy'])->name('post.destroy');

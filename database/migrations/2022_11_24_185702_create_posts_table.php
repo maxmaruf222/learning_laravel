@@ -23,8 +23,8 @@ return new class extends Migration
             $table->string('img');
             $table->text('description');
             $table->text('tags');
-            $table->string('status');
-            $table->string('post_date');
+            $table->string('status')->nullable();
+            $table->string('post_date')->nullable();
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('category_id')->references('id')->on('category')->onDelete('cascade');

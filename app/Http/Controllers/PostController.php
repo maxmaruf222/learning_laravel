@@ -10,6 +10,7 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 use Barryvdh\Debugbar\Facades\Debugbar;
 use Intervention\Image\Facades\Image;
+use File;
 
 class PostController extends Controller
 {
@@ -36,7 +37,7 @@ class PostController extends Controller
             'img'=>'',
             'description'=>'required',
             'tags'=>'required',
-            'status'=>'',
+            'status'=>'nullable',
             'post_date'=>'',
         ]);
         Debugbar::info('validation success');
@@ -71,4 +72,19 @@ class PostController extends Controller
         return view('posts.index', compact('posts'));
     }
 
+    //__post destroy
+    public function destroy($id)
+    {
+        $data = Post::find($id);
+        if (file_exists($data->img)) {
+            unlink($data->img);
+            $data->delete($data);
+            $notification = array('message'=>'Deleted post successfully', 'type'=>'danger');
+            return redirect()->back()->with($notification);
+        }else{
+            $notification = array('message'=>'File dose not found', 'type'=>'danger');
+            return redirect()->back()->with($notification);
+        }
+        
+    }
 }
