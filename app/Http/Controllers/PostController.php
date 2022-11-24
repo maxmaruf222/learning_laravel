@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Post;
-use App\Models\subcategories;
+use App\Models\subcategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
@@ -22,7 +22,7 @@ class PostController extends Controller
     public function create()
     {
         $category = Category::all();
-        $subcategory = subcategories::all();
+        $subcategory = subcategory::all();
         return view('posts.create', ['category'=>$category, 'subcategory'=>$subcategory]);
     }
 
@@ -48,8 +48,8 @@ class PostController extends Controller
         $data['image'] = $image_path;
         $blog = Post::insert([
             'user_id'=> Auth::user()->id,
-            'categorie_id'=>$request->category_id,
-            'subcategorie_id'=>$request->subcategory_id,
+            'category_id'=>$request->category_id,
+            'subcategory_id'=>$request->subcategory_id,
             'title'=>$request->title,
             'slug'=>Str::of($request->title)->slug('_'),
             'img'=>$data['image'],
@@ -64,10 +64,11 @@ class PostController extends Controller
         
     }
 
-    //__manage method
-    public function manage()
+    //__index method
+    public function index()
     {
-        return 'passed';
+        $posts = Post::all();
+        return view('posts.index', compact('posts'));
     }
 
 }

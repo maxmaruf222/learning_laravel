@@ -4,21 +4,21 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
-use App\Models\subcategories;
+use App\Models\subcategory;
 use Illuminate\Support\Str;
 
 class subCategoryController extends Controller
 {
     public function index()
     {
-       $data = subcategories::all();
+       $data = subcategory::all();
        return view('subcategory.index', compact('data'));
     }
 
     public function create()
     {
-        $categories = Category::all();
-        return view('subcategory.create', ['categories'=>$categories]);
+        $category = Category::all();
+        return view('subcategory.create', ['category'=>$category]);
         
     }
 
@@ -26,9 +26,9 @@ class subCategoryController extends Controller
     {   
         $request->validate([
             'category_id'=> 'required',
-            'category_name'=> 'required|unique:subcategories|max:250'
+            'category_name'=> 'required|unique:subcategory|max:250'
         ]);
-        subcategories::insert([
+        subcategory::insert([
             'category_id'=>$request->category_id,
             'category_name'=>$request->category_name,
             'category_slug'=>Str::of($request->category_name)->slug('-'),
@@ -40,7 +40,7 @@ class subCategoryController extends Controller
 
     public function destroy($id)
     {
-        subcategories::destroy($id);
+        subcategory::destroy($id);
         $notification = array('message'=>'Deleted successfully!!', 'type'=>'warning');
         return redirect()->back()->with($notification);
     }
@@ -48,16 +48,16 @@ class subCategoryController extends Controller
 
     public function edit($id)
     {   
-        $data = subcategories::find($id);
+        $data = subcategory::find($id);
         return view('subcategory.edit', compact('data') );
     }
 
     public function update(Request $request, $id)
     {   
         $request->validate([
-            'category_name'=> 'required|unique:subcategories|max:250'
+            'category_name'=> 'required|unique:subcategory|max:250'
         ]);
-        subcategories::find($id)->update([
+        subcategory::find($id)->update([
             'category_name'=>$request->category_name,
         ]);
 

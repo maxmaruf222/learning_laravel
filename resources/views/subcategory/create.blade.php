@@ -17,7 +17,7 @@
                         <div class="form-group">
                           <label for="exampleInputName">Choose Category</label>
                             <select name="category_id" class="form-control">
-                                @foreach ($categories as $row)
+                                @foreach ($category as $row)
                                 <option value="{{ $row->id }}">{{ $row->category_name }}</option>
                                 @endforeach
                             </select>

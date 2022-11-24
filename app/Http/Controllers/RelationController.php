@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
-use App\Models\subcategories;
+use App\Models\subcategory;
 
 
 class RelationController extends Controller
@@ -17,7 +17,7 @@ class RelationController extends Controller
 
     public function belongsTo()
     {
-        $data = subcategories::find(1);
+        $data = subcategory::find(1);
 
         return view('relation.belongs_to', compact('data'));
     }

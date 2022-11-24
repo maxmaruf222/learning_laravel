@@ -46,5 +46,5 @@ Route::get('hasOne', [RelationController::class, 'hasOne']);
 
 //__posts route__//
 Route::get('Post/Create', [PostController::class, 'create'])->name('post.create');
-Route::get('Post/Manage', [PostController::class, 'manage'])->name('post.manage');
+Route::get('Post/Manage', [PostController::class, 'index'])->name('post.manage');
 Route::post('Post/Store', [PostController::class, 'store'])->name('post.store');

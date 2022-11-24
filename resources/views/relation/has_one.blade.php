@@ -22,7 +22,7 @@
                 <tbody class="table-group-divider">
                     <tr class="table-primary" >
                         <td>{{ $data->category_name }}</td>
-                        <td>{{ $data->sub_category->category_name }}</td>
+                        <td>{{ $data->subcategory->category_name }}</td>
                     </tr>
                 </tbody>
                 <tfoot>

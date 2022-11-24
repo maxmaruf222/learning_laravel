@@ -4,17 +4,16 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Category;
 
-class subcategories extends Model
+class Subcategory extends Model
 {
     use HasFactory;
-    protected $table = 'subcategories';
+    protected $table = 'subcategory';
     protected $fillable = [
         'category_id', 'category_name', 'category_slug'
     ];
     
-    public function Category()
+    public function category()
     {
         return $this->belongsTo(Category::class, 'category_id');//this is category_id is foreign key
     }

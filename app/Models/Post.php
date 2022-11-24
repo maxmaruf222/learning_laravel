@@ -4,9 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\User;
-use App\Models\Category;
-use App\Models\subcategories;
 
 class Post extends Model
 {
@@ -20,14 +17,14 @@ class Post extends Model
     {
         return $this->belongsTo(User::class, 'user_id');
     }
-    //__join categories table__//
+    //__join category table__//
     public function category()
     {
-        return $this->belongsTo(Category::class, 'categorie_id');
+        return $this->belongsTo(Category::class, 'category_id');
     }
-    //__join subcategories table__//
+    //__join subcategory table__//
     public function subcategory()
     {
-        return $this->belongsTo(subcategories::class, 'subcategorie_id');
+        return $this->belongsTo(Subcategory::class, 'subcategory_id');
     }
 }

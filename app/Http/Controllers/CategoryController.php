@@ -12,19 +12,19 @@ class CategoryController extends Controller
     public function index()
     {
         //use query builder
-        // $category = DB::table('categories')->get();
+        // $category = DB::table('category')->get();
 
         // use eloquent 
         $category = Category::all();
-        return view('categories.index', ['data'=>$category]);
+        return view('category.index', ['data'=>$category]);
     }
 
     public function create(){
-        return view('categories.create');
+        return view('category.create');
     }
     public function store(Request $request)
     {
-        $request->validate(['category_name'=> 'required|unique:categories|max:255']);
+        $request->validate(['category_name'=> 'required|unique:category|max:255']);
         
         // $category = new Category;
         // $category->category_name = $request->category_name;
@@ -40,11 +40,11 @@ class CategoryController extends Controller
 
     public function edit($id)
     {   
-        // $data = DB::table('categories')->where('id', $id)->first();
+        // $data = DB::table('category')->where('id', $id)->first();
         // $data = Category::where('id',$id)->first();
         $data = Category::find($id);
         
-        return view('categories.edit', compact('data'));
+        return view('category.edit', compact('data'));
         
     }
     public function delete($request)
