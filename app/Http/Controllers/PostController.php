@@ -8,6 +8,8 @@ use App\Models\subcategories;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
+use Barryvdh\Debugbar\Facades\Debugbar;
+use Intervention\Image\Facades\Image;
 
 class PostController extends Controller
 {
@@ -27,29 +29,39 @@ class PostController extends Controller
     //__insert method
     public function store(Request $request)
     {   
-         $request->validate([
+        $data = $request->validate([
             'category_id'=>'required',
             'subcategory_id'=>'required',
-            'title'=>'',
+            'title'=>'required',
+            'img'=>'',
             'description'=>'required',
             'tags'=>'required',
-            // 'post_date'=>'',
-            'file'=>'required',
+            'status'=>'',
+            'post_date'=>'',
         ]);
-        Post::insert([
-            'user_id'=>Auth::user()->id,
+        Debugbar::info('validation success');
+        $image_name = Str::of($request->title)->slug('_') . '.' . $data['img']->getClientOriginalExtension();
+        $image_path = 'img/' . $image_name;
+        Debugbar::info('path success');
+        Image::make($data['img'])->resize(320, 240)->save(public_path($image_path));
+        Debugbar::info('resize and save success');
+        $data['image'] = $image_path;
+        $blog = Post::insert([
+            'user_id'=> Auth::user()->id,
             'categorie_id'=>$request->category_id,
             'subcategorie_id'=>$request->subcategory_id,
             'title'=>$request->title,
-            'slug'=>Str::of($request->title)->slug('-'),
-            'img'=>$request->file,
+            'slug'=>Str::of($request->title)->slug('_'),
+            'img'=>$data['image'],
             'description'=>$request->description,
             'tags'=>$request->tags,
             'status'=>$request->status,
             'post_date'=>$request->post_date,
+            'created_at'=> now(),
         ]);
-        $notification =array('message'=>'Added new category successfully', 'type'=>'success');
+        $notification = array('message'=>'Created new post successfully', 'type'=>'success');
         return redirect()->back()->with($notification);
+        
     }
 
     //__manage method

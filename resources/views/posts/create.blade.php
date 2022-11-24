@@ -37,7 +37,7 @@
                           </div>
                           <div class="form-group">
                             <label for="postDescription">Post Description</label>
-                            <textarea class="form-control @error('description') is-invalid @enderror" name="description" cols="30" rows="5" placeholder="description" ></textarea>
+                            <textarea id="summernote" class="form-control @error('description') is-invalid @enderror" name="description" cols="30" rows="5" placeholder="description" ></textarea>
                           </div>
                           <div class="form-group">
                             <label for="postTags">Post Tags</label>
@@ -51,7 +51,7 @@
                             <label for="ProductInputFile">File input</label>
                             <div class="input-group">
                               <div class="custom-file">
-                                <input type="file" class="custom-file-input @error('file') is-invalid @enderror" id="ProductInputFile" name="file" >
+                                <input type="file" class="custom-file-input @error('file') is-invalid @enderror" id="ProductInputFile" name="img" >
                                 <label class="custom-file-label" for="exampleInputFile">Choose file</label>
                               </div>
                               <div class="input-group-append">
