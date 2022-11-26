@@ -61,7 +61,7 @@
                                              <td>Inactive</td>
                                         @endif
                                         <td>
-                                            <a href="" class="btn btn-sm btn-info">Edit</a>
+                                            <a href="{{ route('post.edit', $post->id) }}" class="btn btn-sm btn-info">Edit</a>
                                             <div class="btn btn-sm">
                                                 <form  action="{{ route('post.destroy', $post->id) }}" method="POST">
                                                     @csrf
