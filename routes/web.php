@@ -1,5 +1,6 @@
 <?php
 
+use App\Events\PostProcessed;
 use App\Http\Controllers\boysController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PostController;
@@ -51,3 +52,10 @@ Route::post('Post/Store', [PostController::class, 'store'])->name('post.store');
 Route::get('Post/Edit/{id}', [PostController::class, 'edit'])->name('post.edit');
 Route::post('Post/update/{id}', [PostController::class, 'update'])->name('post.update');
 Route::delete('/Post/destroy/{id}', [PostController::class, 'destroy'])->name('post.destroy');
+
+//___event check
+Route::get('event/', function(){
+    $data = ['name'=>'Maruf', 'result'=>'Passed'];
+    event(new PostProcessed($data));
+    return $data;
+});
